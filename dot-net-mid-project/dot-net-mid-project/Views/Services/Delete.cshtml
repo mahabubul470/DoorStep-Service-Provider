@@ -1,0 +1,67 @@
+﻿@model dot_net_mid_project.Models.Service
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="form-control-lg">
+    <div class="bg-white">
+        <h3>Are you sure you want to delete the service?</h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.details)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.type)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {   
+            @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-outline-danger btn-lg" /> 
+        <a href="/Services" class="btn btn-outline-primary    btn-lg">Back to Services</a>
+    </div>
+        }
+        <br />
+
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@model dot_net_mid_project.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.work_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.work_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.work_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.work_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Service.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

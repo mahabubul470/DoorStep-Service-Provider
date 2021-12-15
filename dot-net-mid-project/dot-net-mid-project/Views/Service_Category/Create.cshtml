@@ -1,0 +1,47 @@
+﻿@model dot_net_mid_project.Models.Service_Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card" style="padding:2%">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/Services">Services</a></li>
+                    <li class="breadcrumb-item"><a href="/Service_Category">Service Category</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <form class="mx-1 mx-md-4" method="post" action="/Service_Category/Create">
+        @Html.AntiForgeryToken()
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                <input type="text" id="form3Example1c" name="name" value="" class="form-control"  />
+                <label class="form-label" for="form3Example1c">Name </label>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                <input type="text" id="form3Example1c" name="type" value="" class="form-control" />
+                <label class="form-label" for="form3Example1c">Type</label>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <input type="submit" class="btn btn-outline-primary btn-lg" value="Create Category">
+            <a href="/Services" class="btn btn-outline-secondary    btn-lg">Back to Services</a>
+        </div>
+
+    </form>
+</div>

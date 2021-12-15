@@ -1,0 +1,90 @@
+﻿@model dot_net_mid_project.Models.Service
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card" style="padding:2%">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/Services">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <form class="mx-1 mx-md-4" method="post" action="/Services/Edit">
+        @Html.AntiForgeryToken()
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                <input type="text" id="form3Example1c" name="id" value="@Model.id" class="form-control" readonly />
+                <label class="form-label" for="">ID</label>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                <label class="form-label" for="type">Type</label>
+                <select name="name" id="name" class="form-control" value="@Model.type">
+                    @foreach (var item in ViewBag.Category)
+                    {
+                        <option value="@item.name">@item.name</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-outline flex-fill mb-0">
+            @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+            <select name="status" id="status" class="form-control" value="@Model.status">
+                <option value="Active">Active</option>
+                <option value="Disabled">Disabled</option>
+            </select>
+            <label class="form-label" for="status">Service Status</label>
+        </div>
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                <input type="text" id="form3Example3c" name="price" value="@Model.price" class="form-control" />
+                <label class="form-label" for="">Price</label>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                <input type="text" id="form3Example3c" name="details" value="@Model.details" class="form-control" />
+                <label class="form-label" for="">Details</label>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="form-outline flex-fill mb-0">
+                @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
+                <label class="form-label" for="type">Type</label>
+                <select name="type" id="type" class="form-control" value="@Model.type">
+                    @foreach (var item in ViewBag.Category)
+                    {
+                        <option value="@item.type">@item.type</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <input type="submit" class="btn btn-outline-success   btn-lg" value="Edit">
+            <a href="/Services" class="btn btn-outline-primary    btn-lg">Back to Services</a>
+        </div>
+    </form>
+</div>

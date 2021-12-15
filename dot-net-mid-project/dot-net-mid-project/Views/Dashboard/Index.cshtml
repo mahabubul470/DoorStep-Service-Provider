@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Dashbord";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+   
+</style>
+<body>
+    <nav class="navbar navbar-inverse visible-xs">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Dashboard</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li><a href="#">Age</a></li>
+                    <li><a href="#">Gender</a></li>
+                    <li><a href="#">Geo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav hidden-xs">
+                <h2>Dashboard</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="btn bg-light"><a href="/users">Users</a></li>
+                    <li class="btn bg-light"><a href="/employees">Employees</a></li>
+                    <li class="btn bg-light"><a href="/customers">Customers</a></li>
+                    <li class="btn bg-light"><a href="/orders">Orders</a></li>
+                    <li class="btn bg-light"><a href="/services">Services</a></li>
+                </ul><br>
+            </div>
+            <br>
+            <div class="col-sm-9">
+                <div class="well">
+                    <h3>Welcome @Session["username"]</h3>
+                    <p class="page-item">Manage Users , Employes , Employes, Services</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="well ">
+                            <h4>Users</h4>
+                            <h1>@ViewData["usercount"]</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4>Employes</h4>
+                            <h1>@ViewData["employeecount"]</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4>Customers</h4>
+                            <h1>@ViewData["customercount"]</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4> Services </h4>
+                            <h1>@ViewData["servicecount"]</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <h4> Total Orders Receved </h4>
+                            <h1>@ViewData["ordercount"]</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <h4> Employees on Leave</h4>
+                            <h1>@ViewData["ordercount"]</h1>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+

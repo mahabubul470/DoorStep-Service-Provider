@@ -1,0 +1,58 @@
+﻿@model dot_net_mid_project.Models.User
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="">
+    <div class="bg-light">
+        <h2>Delete</h2>
+        <h3>Are you sure you want to delete the user?</h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.usertype)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.usertype)
+            </dd>
+
+        </dl>
+        @using (Html.BeginForm("Delete", "Users", FormMethod.Post))
+        {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <input type="submit" value="Delete" id="submitButn" class="btn btn-outline-danger" />
+        }
+            <a class="btn btn-outline-primary" href="/users/index">Back to Users</a>
+       
+    </div>
+
+</div>

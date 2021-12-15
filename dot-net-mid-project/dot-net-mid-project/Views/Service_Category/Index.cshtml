@@ -1,0 +1,66 @@
+﻿@model IEnumerable<dot_net_mid_project.Models.Service_Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card" style="padding:2%">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/Services">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Service Category</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <form class="d-block" action="/service_category/search">
+        <input class="form-control me-2" name="search" type="search" placeholder="Search by name " aria-label="Search"><br />
+        <button class="btn  btn-outline-info" type="submit">Search Service Category</button>
+    </form>
+    <br />
+    <p>
+        <a class="btn btn-outline-primary" href="/Service_Category/create"> Add Service Category </a>
+    </p>
+    <table class="table ">
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.id
+                </td>
+                <td>
+                    @item.name
+                </td>
+                <td>
+
+                    @item.type
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" href="/service_category/details/@item.id"> Details</a>
+                    <a class="btn btn-outline-secondary" href="/Service_Category/edit/@item.id"> Edit</a>
+                    <a class="btn btn-outline-danger" href=" /service_category/delete/@item.id"> Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

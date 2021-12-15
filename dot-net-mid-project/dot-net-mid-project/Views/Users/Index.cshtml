@@ -1,0 +1,124 @@
+﻿@model IEnumerable<dot_net_mid_project.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card" style="padding:2%">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Users</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <form class="d-block" action="/users/search">
+        <input class="form-control me-2" name="search" type="search" placeholder="Search by name " aria-label="Search"><br />  
+        <button class="btn btn-info btn-outline-success" type="submit">Search</button>
+    </form>
+    <br />
+    <p>
+        <a class="btn btn-primary" href="/users/create"> Add User </a>
+    </p>
+    <table class="table ">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Usertype
+            </th>
+            <th>
+                Account Status
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+
+            @if (item.usertype == 1)
+            {
+                <div>Admin</div>
+            }
+            else if (item.usertype == 2)
+            {
+                <div>Custormer</div>
+            }
+            else if (item.usertype == 3)
+            {
+                <div>Employee</div>
+            }
+            else 
+            {
+                <div>Manager</div>
+            }
+
+        </td>
+        <td>
+            @if (@item.additional_info.Trim() == "Active")
+            {
+                <span style="color:forestgreen">@item.additional_info</span>
+            }
+            else
+            {
+                <span style="color:orangered">@item.additional_info</span>
+            }
+        </td>
+        <td>
+
+
+            @if (@item.usertype == 1)
+            {
+                <a class="btn btn-info" href="/users/details/@item.id"> Details</a>
+                <a class="btn btn-primary" href="/users/edit/@item.id"  onclick="return false"  disabled> Edit</a>
+                <a class="btn btn-outline-danger" onclick="return false" href=" /users/delete/@item.id" disabled> Delete</a>
+                <a class="btn btn-outline-danger" onclick="return false" href=" /users/block/@item.id" disabled> Block Account</a>
+
+            }
+            else if (item.additional_info.Trim() == "Blocked")
+            {
+                <a class="btn btn-info" href="/users/details/@item.id"> Details</a>
+                <a class="btn btn-primary" href="/users/edit/@item.id" > Edit</a>
+                <a class="btn btn-outline-danger" href="/users/delete/@item.id"> Delete</a>
+                <a class="btn btn-outline-success" href="/users/activate/@item.id"  > Active Account</a>
+
+            }
+            else
+            {
+                <a class="btn btn-info" href="/users/details/@item.id"> Details</a>
+                <a class="btn btn-primary" href="/users/edit/@item.id" > Edit</a>
+                <a class="btn btn-outline-danger"  href=" /users/delete/@item.id" > Delete</a>
+                <a class="btn btn-outline-danger"  href=" /users/block/@item.id" > Block Account</a>
+                    
+            }
+
+
+
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>
+
