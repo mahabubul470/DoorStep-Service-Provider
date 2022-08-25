@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20504b7acf6248edad0ddc02135f7530" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Address" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Application" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Customer" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Manager" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Order_Details" Width="1.5" PointX="9.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Service_Category" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Service" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Token" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Users_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Applications_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Customers_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Employees_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Employees_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Managers_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Details_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Details_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Services_Service_Category" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

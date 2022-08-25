@@ -43,7 +43,6 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-
             <select class="form-control" name="usertype" id="usertype">
                 <option>Select UserType</option>
                 <option value="4">Manager</option>
